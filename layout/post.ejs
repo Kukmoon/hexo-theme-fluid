@@ -47,7 +47,14 @@ page.banner_mask_alpha = page.banner_mask_alpha || theme.post.banner_mask_alpha
                 <%- inject_point('postMarkdownEnd') %>
               </div>
             <% } %>
-            <hr/>
+            <div>
+                <!-- 引入自己编写的“分享到”模块（新） -->
+                <%- partial('_partials/share') %>            
+                <hr/>
+                <!-- 引入自己编写的打赏模块（新） -->
+                <%- partial('_partials/donate') %>
+                <hr/>
+            </div>
             <div>
               <%- inject_point('postMetaBottom') %>
 
