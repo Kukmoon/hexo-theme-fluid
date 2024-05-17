@@ -1,0 +1,17 @@
+<div style="text-align: center; margin: auto auto 1.5em;"><!--自己添加的打赏模块：开始-->
+  <% if (theme.donate.enable) { %><!--如果主题的  _config.yml 中开启打赏-->
+    <div style="border-style:solid none none none; border-color: #663399; border-width: 0.5em; color: #663399; font-weight:bold; font-size: 1.2em; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; border-radius: 8px;margin-bottom: 10px;"><!-- 显示“打赏支持”的盒子-->
+	  <% if (config.language == 'zh-CN') { %> <!--如果博客语言是中文，就显示“打赏支持”，非中文一律显示“Donate”-->
+	    求扫码打赏
+	  <% } else { %>
+	    Donate me by scanning QR Code
+	  <% } %>	
+	</div>
+    <div style="font-size: 14px;margin-bottom: 10px;">
+	  “<%= theme.donate.message %>” <!--在主题的 _config.yml 中设置打赏提示语-->
+	</div>
+    <div style="width: auto; height: auto; max-width: 600px; max-height: 600px; text-align: center; margin: auto; "><!--两张二维码强制放在同一行，以免换行，强制设定图片的宽度随页面的变化而变化，图片最大宽度为300 px-->
+	  <img src="<%= theme.donate.alipay %>" style="width: auto; height:auto; max-width: 50%;"><img src="<%= theme.donate.wechatpay %>" style="width: auto; height: auto; max-width: 50%;"><!--在主题的 _config.yaml 中设置打赏二维码图片-->
+	</div>
+  <% } %>
+</div> <!--自己添加的打赏模块：结束-->
