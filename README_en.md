@@ -1,142 +1,77 @@
 <p align="center">
   <img alt="Fluid Logo" src="https://avatars2.githubusercontent.com/t/3419353?s=280&v=4" width="128">
 </p>
+<p align="center">Fluid theme edited by Kukmoon</p>
 
-<p align="center">An elegant Material-Design theme for Hexo</p>
+![Preview](https://img.kukmoon.com/202111262037388.png)
 
-![ScreenShot](https://cdn.jsdelivr.net/gh/fluid-dev/static@master/hexo-theme-fluid/screenshots/index.png)
 
-<p align="center">
-  <a title="Hexo Version" target="_blank" href="https://hexo.io"><img alt="Hexo Version" src="https://img.shields.io/badge/Hexo-%3E%3D%205.0-orange?style=flat"></a>
-  <a title="Node Version" target="_blank" href="https://nodejs.org"><img alt="Node Version" src="https://img.shields.io/badge/Node-%3E%3D%2010.13.0-yellowgreen?style=flat"></a>
-  <a title="License" target="_blank" href="https://github.com/fluid-dev/hexo-theme-fluid/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/fluid-dev/hexo-theme-fluid.svg?style=flat"></a>
-  <br>
-  <a title="GitHub Release" target="_blank" href="https://github.com/fluid-dev/hexo-theme-fluid/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/fluid-dev/hexo-theme-fluid?style=flat"></a>
-  <a title="Npm Downloads" target="_blank" href="https://www.npmjs.com/package/hexo-theme-fluid"><img alt="Npm Downloads" src="https://img.shields.io/npm/dt/hexo-theme-fluid?color=red&label=npm"></a>
-  <a title="GitHub Commits" target="_blank" href="https://github.com/fluid-dev/hexo-theme-fluid/commits/master"><img alt="GitHub Commits" src="https://img.shields.io/github/commit-activity/m/fluid-dev/hexo-theme-fluid.svg?style=flat&color=brightgreen&label=commits"></a>
-  <br><br>
-  <a title="GitHub Watchers" target="_blank" href="https://github.com/fluid-dev/hexo-theme-fluid/watchers"><img alt="GitHub Watchers" src="https://img.shields.io/github/watchers/fluid-dev/hexo-theme-fluid.svg?label=Watchers&style=social"></a>  
-  <a title="GitHub Stars" target="_blank" href="https://github.com/fluid-dev/hexo-theme-fluid/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/fluid-dev/hexo-theme-fluid.svg?label=Stars&style=social"></a>  
-  <a title="GitHub Forks" target="_blank" href="https://github.com/fluid-dev/hexo-theme-fluid/network/members"><img alt="GitHub Forks" src="https://img.shields.io/github/forks/fluid-dev/hexo-theme-fluid.svg?label=Forks&style=social"></a>  
-</p>
 
-<p align="center"><a title="Chinese" href="README.md">🇨🇳 中文简体</a>  |  🇬🇧 English</p>
 
-<p align="center">
-  <span>Docs: </span>
-  <a href="https://hexo.fluid-dev.com/docs/en/guide/">Theme guide</a>&nbsp&nbsp&nbsp&nbsp
-  <a href="https://hexo.io/docs/front-matter">Post guide</a>
-</p>
+<p align="center"> <a title="Original Theme" href="https://github.com/fluid-dev/hexo-theme-fluid">Click here to visit the original theme</a></p>
 
-<p align="center">
-  <span>Preview: </span>
-  <a href="https://hexo.fluid-dev.com/">Fluid's blog</a>&nbsp&nbsp&nbsp&nbsp
-  <a href="https://zkqiang.cn">zkqiang's blog</a>
-</p>
+## Version
 
-## Quick Start
+**1.9.4**
 
-#### 1. Install Hexo
+## What are Modified?
 
-If you don't have a hexo blog, please follow [Hexo Docs](https://hexo.io/docs/) to install and initialize your blog。
+1. A donation module was added. See [here](https://blog.kukmoon.com/7bf76e1d.html) for details.
+2. A "Share to" module was added. See [here](https://blog.kukmoon.com/c87ddd18.html).
+3. [The original Fluid theme](https://github.com/fluid-dev/hexo-theme-fluid) was forked at GitHub to use Git and GitHub for version control.
+4. `Readme.md` was updated. Every update will modify `Readme.md` in future.
+5. <del>Added a list of URLs for the main and mirror sites on the front page, see [here](https://blog.kukmoon.com/45ee46db.html) for details.</del>
+6. <del>Added a prompt at the beginning of each article to indicate that users can click to jump to the mirror site, see [here](https://blog.kukmoon.com/c4d07859.html) for more details.</del>
+7. The "Share to" module was modified. See [here](https://blog.kukmoon.com/c87ddd18.html).
+8. The code highlighting is set to Mac style.
+9. Upgraded to hexo-theme-fluid 1.9.6. The donation and "Share to" modules were once again added. The donation module was saved as `themes/fluid/layout/_partials/donate.ejs`. The "Share to" module was saved as `themes/fluid/layout/_partials/share.ejs`. The dependencies, including `jquery.min.js`, `qrcode.min.js` and `social-share.min.js` were copied to `themes/fluid/source/js` folder. Another dependency, `social-share.min.css` that was copied to `themes/fluid/source/css` folder, was quoted within `_config.fluid.yml`. Finally, the following codes were added into `themes/fluid/layout/post.ejs` :
+    ```
+    <div>
+        <!-- 引入自己编写的“分享到”模块（新） -->
+        <%- partial('_partials/share') %>            
+        <hr/>
+        <!-- 引入自己编写的打赏模块（新） -->
+        <%- partial('_partials/donate') %>
+        <hr/>
+    </div>
+    ```
+10. New code block was redesigned as an Mac style according to [this article](http://lzqlearn.com/blog/6560820db005/). CSS codes is stored in `theme/fluid/css/macpanel-highlightjs.css`. The style sheet is quoted within `_config.fluid.yml`.
 
-#### 2. Install Fluid
+## Files involved
 
-**Way A:**
+Added files:
 
-If your Hexo version >= 5.0.0, you can install Fluid via Npm:
-
-```sh
-npm install --save hexo-theme-fluid
+```
+layout/_partials/donate.ejs
+layout/_partials/share.ejs
+source/css/macpanel-highlightjs.css
+source/css/macpanel-prismjs.css
+source/css/social-share.min.css
+source/js/jquery.min.js
+source/js/qrcode.min.js
+source/js/social-share.min.js
 ```
 
-Then create `_config.fluid.yml` in the blog directory and copy the content of [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml).
+Modified files：
 
-**Way B:**
-
-Download the [latest release](https://github.com/fluid-dev/hexo-theme-fluid/releases), then extract it to `themes` directory and renamed to `fluid`.
-
-#### 3. Set theme
-
-Edit `_config.yml` in the blog root directory as follows:
-
-```yaml
-theme: fluid
+```
+layout/post.ejs
+README.md
+README_en.md
 ```
 
-#### 4. Create about page
+All files above is compacted into `fluid_modified_files.zip`.
 
-The about page needs to be created manually:
+## Acknowledgements
 
-```bash
-hexo new page about
-```
++ <del>[Thanks to Notepad++ for providing development tool](https://github.com/notepad-plus-plus/notepad-plus-plus)</del>
++ [Thanks to Social-share.js for providing the "Share to" module](https://github.com/slince/social-share.js)
++ [Thanks to Xuefeng Liao for the Git tutorial](https://www.liaoxuefeng.com/wiki/896043488029600)
++ [Thanks to Microsoft for providing development tool, VSCode](https://code.visualstudio.com/)
 
-Then edit `/source/about/index.md` and add `layout` attribute.
+## To Do
 
-The modified example is as follows:
+1. To add a responsive sidebar to the home page, which appears only when the button is clicked, otherwise it is hidden.
+2. To add a split line between each article on the homepage and also increase the distance between them.
 
-```yaml
----
-title: about
-layout: about
----
-
-About content
-```
-
-## How to Upgrade
-
-[Please follow here](https://hexo.fluid-dev.com/docs/en/start/#theme-upgrade)
-
-## Features
-
-- [x] Detailed [documents](https://hexo.fluid-dev.com/docs/en/)
-- [x] Widget lazyload
-- [x] Multiple code highlighting schemes
-- [x] Multiple comment plugins
-- [x] Multiple language configurations
-- [x] Multiple website analysis
-- [x] Support for local search
-- [x] Support for footnote
-- [x] Support for LaTeX
-- [x] Support for Mermaid
-- [x] Dark mode
-
-## Thanks
-
-<a title="Thanks to JetBrains for providing the license" href="https://www.jetbrains.com/?from=hexo-theme-fluid" target="_blank">
-  <img src="https://raw.githubusercontent.com/fluid-dev/static/690616966f34a58d66aa15ac7b550dd7bbc03967/hexo-theme-fluid/jetbrains.svg" width="150" alt="JetBrains">
-</a>
-
-## Contributors
-
-[![contributors](https://opencollective.com/hexo-theme-fluid/contributors.svg?width=890&button=false)](https://github.com/fluid-dev/hexo-theme-fluid/graphs/contributors)
-
-English docs translator: [@EatRice](https://eatrice.top/) [@橙子杀手](https://ruru.eatrice.top) [@Sinetian](https://sinetian.github.io/)
-
-Contributors outside PR: [@zhugaoqi](https://github.com/zhugaoqi) [@julydate](https://github.com/julydate) [@xiyuvi](https://xiyu.pro/)
-
-## Support
-
-If you find this project helpful and would like to support its development, please consider making a financial contribution.
-
-<table>
-  <thead>
-    <tr>
-      <th align="center" style="width: 240px;">
-        <div>
-          <a href="https://etherscan.io/address/0x0021395954710be29c0BFDCB3f98f4D2fa5A1448">
-            <img src="https://avatars.githubusercontent.com/u/6250754?s=200&v=4" height="200px" alt="ERC20 Token">
-          </a>
-          <br>
-          <sub>ERC20 Token: 0x0021395954710<br>be29c0BFDCB3f98f4D2fa5A1448</sub>
-        </div>
-      </th>
-    </tr>
-  </thead>
-</table>
-
-## Star Trending
-
-[![Stargazers over time](https://starchart.cc/fluid-dev/hexo-theme-fluid.svg)](https://starchart.cc/fluid-dev/hexo-theme-fluid)
+Translated with www.DeepL.com/Translator (free version)
